@@ -34,7 +34,7 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="hero bg-gradient-to-tr from-primary via-primary-light to-accent h-screen">
+      <div className="hero bg-gradient-to-tr from-primary via-primary-light to-accent min-h-screen h-full">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card bg-transparent w-full max-w-sm shrink-0 shadow-2xl rounded-none">
             <form onSubmit={handleLogin} className="card-body">
@@ -71,7 +71,7 @@ const Login = () => {
             <GoogleBtn></GoogleBtn>
             <p className="text-neutral-white p-4">
               New here ? please{" "}
-              <Link className="btn btn-xs rounded-none">Create Account</Link>{" "}
+              <Link to={"/signup"} className="btn btn-xs rounded-none">Create Account</Link>{" "}
             </p>
           </div>
         </div>

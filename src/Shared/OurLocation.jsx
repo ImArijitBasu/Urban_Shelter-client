@@ -47,7 +47,7 @@ const OurLocation = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="z-0">
           <MapContainer
             center={position}
             zoom={13}

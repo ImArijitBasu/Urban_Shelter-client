@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 
 const Main = () => {
     const location = useLocation()
-    const noHeadFoot = location.pathname.includes('login');
+    const noHeadFoot = location.pathname.includes('login') || location.pathname.includes('signup') ;
   return (
     <div className="flex flex-col">
         {

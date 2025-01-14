@@ -1,9 +1,23 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-
-
+import useAuth from "../Hooks/useAuth";
+import Swal from 'sweetalert2'
 const Navbar = () => {
-  const user = true;
+  const { user ,logout} = useAuth();
+
+    const handleLogOut = () =>{
+        logout()
+        .then(()=>{
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Successfully Logged Out",
+                showConfirmButton: false,
+                timer: 1500
+              });              
+        })
+    }
+
   const navLinks = (
     <>
       <li>
@@ -19,22 +33,32 @@ const Navbar = () => {
       {user ? (
         <div className="dropdown dropdown-bottom dropdown-end">
           <div tabIndex={0} role="button" className="rounded-3xl m-1">
-            <img src="/logos.png" className="w-12 rounded-full" alt="" />
+            <div className="h-12 w-12 border-2 border-accent rounded-full flex justify-center items-center">
+              <img src={user.photoURL} className="w-12 rounded-full" alt="" />
+            </div>
           </div>
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-primary-light rounded-box z-[1] w-52 p-2 shadow"
           >
+            <p className="text-xl text-center border-b-2 uppercase mb-2 font-bold">
+              {user.displayName}
+            </p>
             <li>
               <a>Dashboard</a>
             </li>
             <li>
-              <a>Logout</a>
+              <button onClick={handleLogOut}>Logout</button>
             </li>
           </ul>
         </div>
       ) : (
-        <Link className="btn text-lg font-bold bg-primary-light text-neutral-white border-accent hover:bg-accent hover:border-accent">Login</Link>
+        <Link
+          to={"login"}
+          className="btn text-lg font-bold bg-primary-light text-neutral-white border-accent hover:bg-accent hover:border-accent"
+        >
+          Login
+        </Link>
       )}
     </>
   );
@@ -76,9 +100,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-2">
-            {navLinks}
-          </ul>
+          <ul className="menu menu-horizontal px-1 space-x-2">{navLinks}</ul>
         </div>
         <div className="navbar-end">{userLinks}</div>
       </div>

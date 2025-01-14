@@ -1,0 +1,191 @@
+[
+    {
+        "apartmentNo": "101",
+        "floorNo": 1,
+        "blockName": "A",
+        "rent": 2000,
+        "image": "https://i.ibb.co/DGWKtPr/pexels-chaitaastic-1918291.jpg"
+    },
+    {
+        "apartmentNo": "102",
+        "floorNo": 1,
+        "blockName": "B",
+        "rent": 2500,
+        "image": "https://i.ibb.co/WFwrV4z/pexels-dropshado-2251247.jpg"
+    },
+    {
+        "apartmentNo": "103",
+        "floorNo": 1,
+        "blockName": "C",
+        "rent": 3000,
+        "image": "https://i.ibb.co/SK2jFH5/pexels-emrecan-2079246.jpg"
+    },
+    {
+        "apartmentNo": "201",
+        "floorNo": 2,
+        "blockName": "A",
+        "rent": 2200,
+        "image": "https://i.ibb.co/TbHJypZ/pexels-fotoaibe-813692.jpg"
+    },
+    {
+        "apartmentNo": "202",
+        "floorNo": 2,
+        "blockName": "B",
+        "rent": 2700,
+        "image": "https://i.ibb.co/QfttGm3/pexels-fotoaibe-1571453.jpg"
+    },
+    {
+        "apartmentNo": "203",
+        "floorNo": 2,
+        "blockName": "C",
+        "rent": 3100,
+        "image": "https://i.ibb.co/Rc7KmxF/pexels-fotoaibe-1571460.jpg"
+    },
+    {
+        "apartmentNo": "301",
+        "floorNo": 3,
+        "blockName": "A",
+        "rent": 2300,
+        "image": "https://i.ibb.co/TBBDXQz/pexels-fotoaibe-1571472.jpg"
+    },
+    {
+        "apartmentNo": "302",
+        "floorNo": 3,
+        "blockName": "B",
+        "rent": 2800,
+        "image": "https://i.ibb.co/bRGyXjW/pexels-fotoaibe-1668860.jpg"
+    },
+    {
+        "apartmentNo": "303",
+        "floorNo": 3,
+        "blockName": "C",
+        "rent": 3200,
+        "image": "https://i.ibb.co/M1cnbyR/pexels-fotoaibe-1743227.jpg"
+    },
+    {
+        "apartmentNo": "401",
+        "floorNo": 4,
+        "blockName": "A",
+        "rent": 2400,
+        "image": "https://i.ibb.co/X4nwPpt/pexels-homelane-com-492179-1776574.jpg"
+    },
+    {
+        "apartmentNo": "402",
+        "floorNo": 4,
+        "blockName": "B",
+        "rent": 2900,
+        "image": "https://i.ibb.co/Kjf0YjT/pexels-john-tekeridis-21837-1428348.jpg"
+    },
+    {
+        "apartmentNo": "403",
+        "floorNo": 4,
+        "blockName": "C",
+        "rent": 3300,
+        "image": "https://i.ibb.co/bWQFsRZ/pexels-naimbic-2030037.jpg"
+    },
+    {
+        "apartmentNo": "501",
+        "floorNo": 5,
+        "blockName": "A",
+        "rent": 2500,
+        "image": "https://i.ibb.co/SfDryNW/pexels-pixabay-259580.jpg"
+    },
+    {
+        "apartmentNo": "502",
+        "floorNo": 5,
+        "blockName": "B",
+        "rent": 3100,
+        "image": "https://i.ibb.co/98zyb5y/pexels-pixabay-259962.jpg"
+    },
+    {
+        "apartmentNo": "503",
+        "floorNo": 5,
+        "blockName": "C",
+        "rent": 3400,
+        "image": "https://i.ibb.co/RjBZbKN/pexels-pixabay-271618.jpg"
+    },
+    {
+        "apartmentNo": "601",
+        "floorNo": 6,
+        "blockName": "A",
+        "rent": 2600,
+        "image": "https://i.ibb.co/kxmB54J/pexels-pixabay-271624.jpg"
+    },
+    {
+        "apartmentNo": "602",
+        "floorNo": 6,
+        "blockName": "B",
+        "rent": 3200,
+        "image": "https://i.ibb.co/gVqMj0h/pexels-pixabay-271795.jpg"
+    },
+    {
+        "apartmentNo": "603",
+        "floorNo": 6,
+        "blockName": "C",
+        "rent": 3500,
+        "image": "https://i.ibb.co/hWFJ8Xv/pexels-pixabay-271816.jpg"
+    },
+    {
+        "apartmentNo": "701",
+        "floorNo": 7,
+        "blockName": "A",
+        "rent": 2700,
+        "image": "https://i.ibb.co/jfbwkqv/pexels-pixabay-534172.jpg"
+    },
+    {
+        "apartmentNo": "702",
+        "floorNo": 7,
+        "blockName": "B",
+        "rent": 3300,
+        "image": "https://i.ibb.co/cwqdKKn/pexels-zvolskiy-2062431.jpg"
+    },
+    {
+        "apartmentNo": "703",
+        "floorNo": 7,
+        "blockName": "C",
+        "rent": 3600,
+        "image": "https://i.ibb.co/DGWKtPr/pexels-chaitaastic-1918291.jpg"
+    },
+    {
+        "apartmentNo": "801",
+        "floorNo": 8,
+        "blockName": "A",
+        "rent": 2800,
+        "image": "https://i.ibb.co/WFwrV4z/pexels-dropshado-2251247.jpg"
+    },
+    {
+        "apartmentNo": "802",
+        "floorNo": 8,
+        "blockName": "B",
+        "rent": 3400,
+        "image": "https://i.ibb.co/SK2jFH5/pexels-emrecan-2079246.jpg"
+    },
+    {
+        "apartmentNo": "803",
+        "floorNo": 8,
+        "blockName": "C",
+        "rent": 3800,
+        "image": "https://i.ibb.co/TbHJypZ/pexels-fotoaibe-813692.jpg"
+    },
+    {
+        "apartmentNo": "901",
+        "floorNo": 9,
+        "blockName": "A",
+        "rent": 2900,
+        "image": "https://i.ibb.co/QfttGm3/pexels-fotoaibe-1571453.jpg"
+    },
+    {
+        "apartmentNo": "902",
+        "floorNo": 9,
+        "blockName": "B",
+        "rent": 3500,
+        "image": "https://i.ibb.co/Rc7KmxF/pexels-fotoaibe-1571460.jpg"
+    },
+    {
+        "apartmentNo": "903",
+        "floorNo": 9,
+        "blockName": "C",
+        "rent": 4000,
+        "image": "https://i.ibb.co/DGWKtPr/pexels-chaitaastic-1918291.jpg"
+    }
+]

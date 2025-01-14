@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home";
 import Apartments from "../Pages/Home/Apartments";
 import Login from "../Pages/Authentications/Login";
 import SignUp from "../Pages/Authentications/SignUp";
+import Dashboard from "../Layouts/Dashboard";
+import MyProfile from "../Pages/Dashboard/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -28,4 +30,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+        {
+            path: "",
+            element: <MyProfile></MyProfile>
+        }
+    ]
+  }
 ]);

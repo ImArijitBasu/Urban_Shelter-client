@@ -3,9 +3,11 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Title from "../../../Components/Title";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const ManageMembers = () => {
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -13,17 +15,18 @@ const ManageMembers = () => {
       return res.data;
     },
   });
-  console.log(users);
 
   const handleRemoveMember = async (User_id) => {
     try {
-      const res = await axiosPublic.patch('/users/remove', { id: User_id });
-      console.log(res.data);  
-      refetch()
-      Swal.fire('Member removed successfully');  
+      const res = await axiosPublic.patch("/users/remove", { id: User_id });
+      console.log(res.data);
+      if (res.data.modifiedCount === 1) {
+        refetch();
+        Swal.fire("Member removed successfully");
+      }
     } catch (error) {
       console.error("Error removing member:", error);
-      Swal.fire('Failed to remove member'); 
+      Swal.fire("Failed to remove member");
     }
   };
   return (
@@ -43,13 +46,18 @@ const ManageMembers = () => {
             <tbody>
               {users.length > 0 ? (
                 <>
-                  {users.map((user , index) => (
-                    <tr>
+                  {users.map((user, index) => (
+                    <tr key={user._id}>
                       <th>{index + 1}</th>
                       <td>{user.name}</td>
                       <td>{user.email}</td>
                       <td>
-                        <button onClick={()=>handleRemoveMember(user._id)} className="btn bg-error text-white btn-xs hover:bg-warning">Remove</button>
+                        <button
+                          onClick={() => handleRemoveMember(user._id)}
+                          className="btn bg-error text-white btn-xs hover:bg-warning"
+                        >
+                          Remove
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -57,7 +65,12 @@ const ManageMembers = () => {
               ) : (
                 <>
                   <tr>
-                  <td colSpan={4} className="text-center text-error text-xl capitalize">No members available</td>
+                    <td
+                      colSpan={4}
+                      className="text-center text-error text-xl capitalize"
+                    >
+                      No members available
+                    </td>
                   </tr>
                 </>
               )}

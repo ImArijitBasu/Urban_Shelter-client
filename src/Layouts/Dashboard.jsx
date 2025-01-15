@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-
+import { FaHome } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 
@@ -73,6 +73,8 @@ const Dashboard = () => {
               </li>
             </>
           )}
+          <li></li>
+          <li><Link to={"/"}><FaHome></FaHome> Home</Link></li>
         </ul>
       </div>
       <div className="bg-neutral flex-1 p-8">

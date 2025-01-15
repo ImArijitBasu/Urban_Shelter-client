@@ -9,9 +9,11 @@ import {
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.config";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
+  const axiosPublic = useAxiosPublic();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
@@ -42,17 +44,34 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if(currentUser){
+        //! assign token
+        const userInfo = {
+          email: currentUser.email,
+        }
+        axiosPublic.post('/jwt' ,userInfo)
+        .then(res=>{
+          if(res.data.token){
+            localStorage.setItem('token' , res.data.token);
+            setLoading(false)
+          }
+        })
+      }else{
+        //! remove token
+        localStorage.removeItem('token')
+      }
       setLoading(false);
     });
     return () => {
       unsubscribe();
     };
-  });
+  },[axiosPublic]);
   const authInfo = {
     user,
     createUser,
     loading,
     logout,
+    setLoading,
     signIn,
     updateUserProfile,
     googleSignIn,
@@ -60,7 +79,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={authInfo}>{
-        loading ? <progress className="progress w-56"></progress> : children
+        loading ? <progress className="progress w-full h-screen bg-primary"></progress> : children
     }</AuthContext.Provider>
   );
 };

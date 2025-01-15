@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleBtn from "../../Shared/GoogleBtn";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 const Login = () => {
   const { signIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation()
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,7 +35,7 @@ const Login = () => {
                   `,
         },
       });
-      navigate('/')
+      navigate(from, { replace: true });
     });
   };
   return (

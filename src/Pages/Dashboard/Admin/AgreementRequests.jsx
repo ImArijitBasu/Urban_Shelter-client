@@ -3,13 +3,15 @@ import Title from "../../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const AgreementRequests = () => {
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure()
   const { data: agreements = [], refetch } = useQuery({
     queryKey: ["agreements"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/agreements");
+      const res = await axiosSecure.get("/agreements");
       return res.data;
     },
   });

@@ -12,6 +12,7 @@ import ManageMembers from "../Pages/Dashboard/Admin/ManageMembers";
 import MakeAnnouncements from "../Pages/Dashboard/Admin/MakeAnnouncements";
 import AgreementRequests from "../Pages/Dashboard/Admin/AgreementRequests";
 import ManageCoupons from "../Pages/Dashboard/Admin/ManageCoupons";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -43,23 +44,23 @@ export const router = createBrowserRouter([
       //!Admin routes
       {
         path: 'adminProfile',
-        element: <AdminProfile></AdminProfile>
+        element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
       },
       {
         path: 'manageMembers',
-        element: <ManageMembers/>
+        element: <AdminRoute><ManageMembers></ManageMembers></AdminRoute>
       },
       {
         path: 'makeAnnouncements',
-        element: <MakeAnnouncements/>
+        element: <AdminRoute><MakeAnnouncements/></AdminRoute>
       },
       {
         path: 'agreementRequests',
-        element: <AgreementRequests/>
+        element: <AdminRoute><AgreementRequests/></AdminRoute>
       },
       {
         path: 'manageCoupons',
-        element: <ManageCoupons/>
+        element: <AdminRoute><ManageCoupons/></AdminRoute>
       },
         {
             path: "userProfile",

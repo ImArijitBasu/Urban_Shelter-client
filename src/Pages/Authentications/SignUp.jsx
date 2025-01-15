@@ -4,11 +4,12 @@ import GoogleBtn from "../../Shared/GoogleBtn";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast"; // Importing the toast properly
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SignUp = () => {
   const { createUser, updateUserProfile } = useAuth();
   const navigate = useNavigate();
-
+  const axiosPublic = useAxiosPublic();
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -36,24 +37,33 @@ const SignUp = () => {
         return updateUserProfile(name, photoURL);
       })
       .then(() => {
-        Swal.fire({
-          title: "User registration success",
-          showClass: {
-            popup: `
-                  animate__animated
-                  animate__fadeInUp
-                  animate__faster
-                `,
-          },
-          hideClass: {
-            popup: `
-                  animate__animated
-                  animate__fadeOutDown
-                  animate__faster
-                `,
-          },
+        const userInfo = {
+          name: name,
+          email: email,
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          if (res.data.insertedId) {
+            Swal.fire({
+              title: "User registration success",
+              showClass: {
+                popup: `
+                      animate__animated
+                      animate__fadeInUp
+                      animate__faster
+                    `,
+              },
+              hideClass: {
+                popup: `
+                      animate__animated
+                      animate__fadeOutDown
+                      animate__faster
+                    `,
+              },
+            });
+            navigate("/");
+          }
         });
-        navigate('/'); 
       })
       .catch((error) => {
         console.error("Sign-up failed:", error.message);
@@ -104,7 +114,9 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="text-neutral-white text-bold">Photo URL</span>
+                  <span className="text-neutral-white text-bold">
+                    Photo URL
+                  </span>
                 </label>
                 <input
                   type="url"

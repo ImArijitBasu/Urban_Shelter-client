@@ -63,11 +63,20 @@ const Apartments = () => {
         blockName: apartment.blockName,
         apartmentNo: apartment.apartmentNo,
         rent: apartment.rent,
+        date : new Date(),
         status: "pending",
       };
       try {
         const res = await axiosPublic.post("/agreements", agreementData);
+        if(res.data.insertedId){
+
+        }
         console.log("agreement confirmation", res.data);
+        Swal.fire({
+          title: "apartment booked successfully",
+          icon: "success",
+          draggable: true,
+        });
       } catch (error) {
         if (error.response.status === 400) {
           Swal.fire({

@@ -40,6 +40,7 @@ const SignUp = () => {
         const userInfo = {
           name: name,
           email: email,
+          role: "user"
         };
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log(res.data);

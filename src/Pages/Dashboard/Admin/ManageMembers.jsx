@@ -1,0 +1,72 @@
+import React from "react";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import Title from "../../../Components/Title";
+import Swal from "sweetalert2";
+
+const ManageMembers = () => {
+  const axiosPublic = useAxiosPublic();
+  const { data: users = [], refetch } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/users/members");
+      return res.data;
+    },
+  });
+  console.log(users);
+
+  const handleRemoveMember = async (User_id) => {
+    try {
+      const res = await axiosPublic.patch('/users/remove', { id: User_id });
+      console.log(res.data);  
+      refetch()
+      Swal.fire('Member removed successfully');  
+    } catch (error) {
+      console.error("Error removing member:", error);
+      Swal.fire('Failed to remove member'); 
+    }
+  };
+  return (
+    <div>
+      <Title heading={"manage members"}></Title>
+      <div className="overflow-x-auto w-52 sm:w-full">
+        <div className="overflow-x-auto">
+          <table className="table">
+            <thead>
+              <tr className=" border-b-4 border-accent">
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Remove </th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.length > 0 ? (
+                <>
+                  {users.map((user , index) => (
+                    <tr>
+                      <th>{index + 1}</th>
+                      <td>{user.name}</td>
+                      <td>{user.email}</td>
+                      <td>
+                        <button onClick={()=>handleRemoveMember(user._id)} className="btn bg-error text-white btn-xs hover:bg-warning">Remove</button>
+                      </td>
+                    </tr>
+                  ))}
+                </>
+              ) : (
+                <>
+                  <tr>
+                  <td colSpan={4} className="text-center text-error text-xl capitalize">No members available</td>
+                  </tr>
+                </>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ManageMembers;

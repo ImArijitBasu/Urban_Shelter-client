@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: "Roboto",
+        josefin: "Josefin Sans",
+      },
       colors: {
         primary: {
           DEFAULT: '#1E293B', // Midnight Blue

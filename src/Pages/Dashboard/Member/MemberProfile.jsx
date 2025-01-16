@@ -1,12 +1,12 @@
 import React from 'react';
 import Title from '../../../Components/Title';
 
-const AdminProfile = () => {
+const MemberProfile = () => {
     return (
         <div>
-            <Title heading={"admin profile"}></Title>
+            <Title heading={"member profile"}></Title>
         </div>
     );
 };
 
-export default AdminProfile;
+export default MemberProfile;

@@ -1,12 +1,12 @@
 import React from 'react';
 import Title from '../../../Components/Title';
 
-const AdminProfile = () => {
+const PaymentHistory = () => {
     return (
         <div>
-            <Title heading={"admin profile"}></Title>
+            <Title heading={"payment history"}></Title>
         </div>
     );
 };
 
-export default AdminProfile;
+export default PaymentHistory;

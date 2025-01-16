@@ -13,6 +13,11 @@ import MakeAnnouncements from "../Pages/Dashboard/Admin/MakeAnnouncements";
 import AgreementRequests from "../Pages/Dashboard/Admin/AgreementRequests";
 import ManageCoupons from "../Pages/Dashboard/Admin/ManageCoupons";
 import AdminRoute from "./AdminRoute";
+import MemberRoute from "./MemberRoute";
+import MemberProfile from "../Pages/Dashboard/Member/MemberProfile";
+import MakePayment from "../Pages/Dashboard/Member/MakePayment";
+import PaymentHistory from "../Pages/Dashboard/Member/PaymentHistory";
+import Announcements from "../Pages/Dashboard/Announcements";
 
 export const router = createBrowserRouter([
   {
@@ -29,43 +34,97 @@ export const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login/>,
+        element: <Login />,
       },
       {
         path: "signup",
-        element: <SignUp/>,
+        element: <SignUp />,
       },
     ],
   },
   {
     path: "dashboard",
-    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       //!Admin routes
       {
-        path: 'adminProfile',
-        element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
+        path: "adminProfile",
+        element: (
+          <AdminRoute>
+            <AdminProfile></AdminProfile>
+          </AdminRoute>
+        ),
       },
       {
-        path: 'manageMembers',
-        element: <AdminRoute><ManageMembers></ManageMembers></AdminRoute>
+        path: "manageMembers",
+        element: (
+          <AdminRoute>
+            <ManageMembers></ManageMembers>
+          </AdminRoute>
+        ),
       },
       {
-        path: 'makeAnnouncements',
-        element: <AdminRoute><MakeAnnouncements/></AdminRoute>
+        path: "makeAnnouncements",
+        element: (
+          <AdminRoute>
+            <MakeAnnouncements />
+          </AdminRoute>
+        ),
       },
       {
-        path: 'agreementRequests',
-        element: <AdminRoute><AgreementRequests/></AdminRoute>
+        path: "agreementRequests",
+        element: (
+          <AdminRoute>
+            <AgreementRequests />
+          </AdminRoute>
+        ),
       },
       {
-        path: 'manageCoupons',
-        element: <AdminRoute><ManageCoupons/></AdminRoute>
+        path: "manageCoupons",
+        element: (
+          <AdminRoute>
+            <ManageCoupons />
+          </AdminRoute>
+        ),
       },
-        {
-            path: "userProfile",
-            element: <MyProfile></MyProfile>
-        }
-    ]
-  }
+      //!Member routes
+      {
+        path: "memberProfile",
+        element: (
+          <MemberRoute>
+            <MemberProfile />
+          </MemberRoute>
+        ),
+      },
+      {
+        path: "makePayment",
+        element: (
+          <MemberRoute>
+            <MakePayment />
+          </MemberRoute>
+        ),
+      },
+      {
+        path: "paymentHistory",
+        element: (
+          <MemberRoute>
+            <PaymentHistory />
+          </MemberRoute>
+        ),
+      },
+      //! common routes
+      {
+        path: 'announcements',
+        element: <Announcements></Announcements>
+      },
+      {
+        path: "userProfile",
+        element: <MyProfile></MyProfile>,
+      },
+    ],
+  },
 ]);

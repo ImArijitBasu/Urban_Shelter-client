@@ -19,6 +19,7 @@ const AgreementRequests = () => {
   const handleAccept = async (agreementId) => {
     const res = await axiosPublic.patch("/agreements/update", {
       id: agreementId,
+      acceptDate: new Date(),
       action: "accept",
     });
     if (res.data) {

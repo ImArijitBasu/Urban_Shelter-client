@@ -14,7 +14,6 @@ import AgreementRequests from "../Pages/Dashboard/Admin/AgreementRequests";
 import ManageCoupons from "../Pages/Dashboard/Admin/ManageCoupons";
 import AdminRoute from "./AdminRoute";
 import MemberRoute from "./MemberRoute";
-import MemberProfile from "../Pages/Dashboard/Member/MemberProfile";
 import MakePayment from "../Pages/Dashboard/Member/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/Member/PaymentHistory";
 import Announcements from "../Pages/Dashboard/Announcements";
@@ -92,14 +91,6 @@ export const router = createBrowserRouter([
         ),
       },
       //!Member routes
-      {
-        path: "memberProfile",
-        element: (
-          <MemberRoute>
-            <MemberProfile />
-          </MemberRoute>
-        ),
-      },
       {
         path: "makePayment",
         element: (

@@ -22,10 +22,10 @@ const ManageMembers = () => {
     },
   });
 
-  const handleRemoveMember = async (User_id) => {
+  const handleRemoveMember = async (user) => {
     try {
-      const res = await axiosPublic.patch("/users/remove", { id: User_id });
-      // console.log(res.data);
+      const res = await axiosPublic.patch("/users/remove", { user: user });
+      console.log(res.data);
       if (res.data.modifiedCount === 1) {
         await refetch();
         Swal.fire("Member removed successfully");
@@ -59,7 +59,7 @@ const ManageMembers = () => {
                       <td>{user.email}</td>
                       <td>
                         <button
-                          onClick={() => handleRemoveMember(user._id)}
+                          onClick={() => handleRemoveMember(user)}
                           className="btn bg-error text-white btn-xs hover:bg-warning"
                         >
                           Remove

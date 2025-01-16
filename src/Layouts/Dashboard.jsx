@@ -30,51 +30,51 @@ const Dashboard = () => {
         <ul className="menu gap-2 p-4">
           {role === "admin" && (
             <>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/adminProfile">Admin Profile</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/manageMembers">Manage Members</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/makeAnnouncements">Make Announcements</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/agreementRequests">Agreement Requests</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/manageCoupons">Manage Coupons</NavLink>
               </li>
             </>
           )}
           {role === "member" && (
             <>
-              <li>
-                <NavLink to="/dashboard/memberProfile">My Profile</NavLink>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
+                <NavLink to="/dashboard/userProfile">My Profile</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/makePayment">Make Payment</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/paymentHistory">Payment History</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/announcements">Announcements</NavLink>
               </li>
             </>
           )}
           {role === "user" && (
             <>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/userProfile">My Profile</NavLink>
               </li>
-              <li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/announcements">Announcements</NavLink>
               </li>
             </>
           )}
           <li></li>
-          <li><Link to={"/"}><FaHome></FaHome> Home</Link></li>
+          <li className="uppercase text-xs font-bold border rounded-lg text-white"><Link to={"/"}><FaHome></FaHome> Home</Link></li>
         </ul>
       </div>
       <div className="bg-neutral flex-1 p-8">

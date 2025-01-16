@@ -11,17 +11,23 @@ const ManageMembers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users/members");
+      try{
+        const res = await axiosSecure.get("/users/members");
       return res.data;
+      }
+      catch(error) {
+        // console.log(error.response.status);
+        return [];
+      }
     },
   });
 
   const handleRemoveMember = async (User_id) => {
     try {
       const res = await axiosPublic.patch("/users/remove", { id: User_id });
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.modifiedCount === 1) {
-        refetch();
+        await refetch();
         Swal.fire("Member removed successfully");
       }
     } catch (error) {

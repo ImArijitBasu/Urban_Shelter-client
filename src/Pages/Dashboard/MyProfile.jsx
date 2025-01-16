@@ -16,7 +16,6 @@ const MyProfile = () => {
       return res.data;
     },
   });
-  console.log(agreement);
   return (
     <div>
       <Title heading={"My profile"}></Title>
@@ -34,7 +33,7 @@ const MyProfile = () => {
         <div className="">
           <img
             src={user.photoURL}
-            className="w-40 rounded-xl object-cover"
+            className={`w-40 rounded-xl object-cover border-4 ${agreement[0]?.status === "checked"? "border-success" : "border-warning"}`}
             alt=""
           />
         </div>

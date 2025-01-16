@@ -26,7 +26,7 @@ const ManageMembers = () => {
     try {
       const res = await axiosPublic.patch("/users/remove", { user: user });
       console.log(res.data);
-      if (res.data.modifiedCount === 1) {
+      if (res.data) {
         await refetch();
         Swal.fire("Member removed successfully");
       }

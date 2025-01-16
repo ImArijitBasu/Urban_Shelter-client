@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home";
 import Apartments from "../Pages/Home/Apartments";
@@ -115,6 +115,10 @@ export const router = createBrowserRouter([
       {
         path: "userProfile",
         element: <MyProfile></MyProfile>,
+      },
+      {
+        path: "/dashboard", 
+        element: <Navigate to="announcements" replace={true} />
       },
     ],
   },

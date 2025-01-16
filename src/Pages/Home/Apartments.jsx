@@ -159,9 +159,10 @@ const Apartments = () => {
                   </p>
                   <button
                     onClick={() => handleAgreement(apartment)}
+                    disabled={apartment.booked}
                     className="btn text-xl bg-accent hover:bg-primary-light border-none text-neutral-white"
                   >
-                    Agreement
+                    { apartment.booked?"Booked" :"Agreement"}
                   </button>
                 </div>
               </div>

@@ -17,6 +17,7 @@ import MemberRoute from "./MemberRoute";
 import MakePayment from "../Pages/Dashboard/Member/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/Member/PaymentHistory";
 import Announcements from "../Pages/Dashboard/Announcements";
+import Payment from "../Pages/Dashboard/Member/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -104,6 +105,14 @@ export const router = createBrowserRouter([
         element: (
           <MemberRoute>
             <PaymentHistory />
+          </MemberRoute>
+        ),
+      },
+      {
+        path: "makePayment/payment",
+        element: (
+          <MemberRoute>
+            <Payment/>
           </MemberRoute>
         ),
       },

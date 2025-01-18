@@ -1,22 +1,21 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 const Navbar = () => {
-  const { user ,logout} = useAuth();
+  const { user, logout } = useAuth();
 
-    const handleLogOut = () =>{
-        logout()
-        .then(()=>{
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Successfully Logged Out",
-                showConfirmButton: false,
-                timer: 1500
-              });              
-        })
-    }
+  const handleLogOut = () => {
+    logout().then(() => {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Successfully Logged Out",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+  };
 
   const navLinks = (
     <>
@@ -34,7 +33,11 @@ const Navbar = () => {
         <div className="dropdown dropdown-bottom dropdown-end">
           <div tabIndex={0} role="button" className="rounded-3xl m-1">
             <div className="h-12 w-12 border-2 border-accent rounded-full flex justify-center items-center">
-              <img src={user.photoURL} className="w-12 rounded-full" alt="" />
+              <img
+                src={user.photoURL}
+                className="rounded-full object-cover object-center w-full h-full"
+                alt="User Avatar"
+              />
             </div>
           </div>
           <ul

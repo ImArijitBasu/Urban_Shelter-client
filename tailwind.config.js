@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         roboto: "Roboto",
         josefin: "Josefin Sans",
+        dancing: "Dancing Script",
       },
       colors: {
         primary: {

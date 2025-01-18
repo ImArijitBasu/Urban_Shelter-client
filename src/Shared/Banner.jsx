@@ -2,8 +2,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import Slide from "./Slide";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const Banner = () => {
+  const axiosPublic = useAxiosPublic();
+  const { data: apartments = [] } = useQuery({
+    queryKey: ["banner apartments"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/bannerApartments");
+      return res.data;
+    },
+  });
+  console.log(apartments);
   return (
     <div className="">
       <Swiper
@@ -21,10 +32,11 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><Slide image={"https://th.bing.com/th/id/OIP.nmTYSJkPKeD_hFnHgZpdQgHaGZ?rs=1&pid=ImgDetMain"} heading={"Top quality rooms"} subheading={"Do other necessary beautification of this section."}></Slide></SwiperSlide>
-        <SwiperSlide><Slide image={"/bannerImg.jpeg"} heading={"Top quality rooms"} subheading={"Do other necessary beautification of this section."}></Slide></SwiperSlide>
-        <SwiperSlide><Slide image={"/bannerImg.jpeg"} heading={"Top quality rooms"} subheading={"Do other necessary beautification of this section."}></Slide></SwiperSlide>
-        <SwiperSlide><Slide image={"/bannerImg.jpeg"} heading={"Top quality rooms"} subheading={"Do other necessary beautification of this section."}></Slide></SwiperSlide>
+        {apartments.map((apartment) => (
+          <SwiperSlide>
+            <Slide image={apartment.image} rent={apartment.rent} apartment={apartment.apartmentNo}></Slide>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

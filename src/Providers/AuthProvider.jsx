@@ -44,28 +44,27 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      if(currentUser){
+      if (currentUser) {
         //! assign token
         const userInfo = {
           email: currentUser.email,
-        }
-        axiosPublic.post('/jwt' ,userInfo)
-        .then(res=>{
-          if(res.data.token){
-            localStorage.setItem('token' , res.data.token);
-            setLoading(false)
+        };
+        axiosPublic.post("/jwt", userInfo).then((res) => {
+          if (res.data.token) {
+            localStorage.setItem("token", res.data.token);
+            setLoading(false);
           }
-        })
-      }else{
+        });
+      } else {
         //! remove token
-        localStorage.removeItem('token')
+        localStorage.removeItem("token");
       }
       setLoading(false);
     });
     return () => {
       unsubscribe();
     };
-  },[axiosPublic]);
+  }, [axiosPublic]);
   const authInfo = {
     user,
     createUser,
@@ -78,9 +77,15 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>{
-        loading ? <progress className="progress w-full h-screen bg-primary"></progress> : children
-    }</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+      {loading ? (
+        <div className="fixed inset-0 flex justify-center items-center bg-accent bg-opacity-50">
+          <span className="loading loading-dots loading-lg"></span>
+        </div>
+      ) : (
+        children
+      )}
+    </AuthContext.Provider>
   );
 };
 

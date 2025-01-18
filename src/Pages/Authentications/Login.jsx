@@ -16,28 +16,40 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    signIn(email, password).then((result) => {
-      console.log(result.user);
-      Swal.fire({
-        title: "User login success",
-        showClass: {
-          popup: `
-                    animate__animated
-                    animate__fadeInUp
-                    animate__faster
-                  `,
-        },
-        hideClass: {
-          popup: `
-                    animate__animated
-                    animate__fadeOutDown
-                    animate__faster
-                  `,
-        },
+  
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          title: "User login success",
+          showClass: {
+            popup: `
+                      animate__animated
+                      animate__fadeInUp
+                      animate__faster
+                    `,
+          },
+          hideClass: {
+            popup: `
+                      animate__animated
+                      animate__fadeOutDown
+                      animate__faster
+                    `,
+          },
+        });
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Invalid email or password!",
+        });
+        form.reset(); 
       });
-      navigate(from, { replace: true });
-    });
   };
+  
   return (
     <div>
       <div className="hero bg-gradient-to-tr from-primary via-primary-light to-accent min-h-screen h-full">

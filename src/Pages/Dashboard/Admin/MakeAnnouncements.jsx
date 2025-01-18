@@ -45,7 +45,7 @@ const MakeAnnouncements = () => {
     }
   };
   return (
-    <div>
+    <div className="-ml-6 sm:ml-0 ">
       <Title heading={"announcements"}></Title>
       <div className="">
         {/* //!form  */}
@@ -114,7 +114,7 @@ const MakeAnnouncements = () => {
                 return (
                     <div
                   key={announcement._id}
-                  className="bg-accent-orange/20 p-2 rounded-lg my-2"
+                  className="bg-accent-orange/20 p-2 rounded-lg my-2 max-w-full"
                 >
                   <div className="flex items-center justify-between">
                   <p className="text-lg capitalize font-bold text-primary underline underline-offset-4">

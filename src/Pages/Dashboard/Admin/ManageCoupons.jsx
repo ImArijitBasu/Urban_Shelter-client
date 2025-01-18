@@ -60,7 +60,7 @@ const ManageCoupons = () => {
 
   console.log(coupons);
   return (
-    <div>
+    <div className="">
       <Title heading={"Manage Coupons"} />
       <button
         onClick={openModal}
@@ -80,8 +80,8 @@ const ManageCoupons = () => {
       </div>
 
       <div className="">
-        <div className="overflow-x-auto">
-          <table className="table">
+        <div className="overflow-x-auto w-56 sm:w-96 md:w-full">
+          <table className="table ">
             <thead>
               <tr className="border-y-8 border-accent border-x-2 text-center text-accent-orange">
                 <th>Coupon Code</th>

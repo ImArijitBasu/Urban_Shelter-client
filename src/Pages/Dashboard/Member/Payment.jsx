@@ -59,7 +59,7 @@ const Payment = () => {
               check
             </button>
           </form>
-          <p>{message}</p>
+          <p className="text-xs text-error mb-4">{message}</p>
         </div>
         <div className="pr-5 font-semibold uppercase">
           <p>Rent: ${discountPrice ? discountPrice : agreement.rent}</p>

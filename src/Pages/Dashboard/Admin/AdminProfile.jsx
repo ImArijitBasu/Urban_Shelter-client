@@ -55,7 +55,7 @@ const AdminProfile = () => {
             <div className="stat border-8 rounded-lg bg-neutral border-neutral-white hover:border-accent transition-all duration-300 ease-in-out flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-between items-center">
               <div className="">
                 <div className=" text-accent">Available Room</div>
-                <div className="text-4xl font-extrabold text-accent-orange">
+                <div className="text-2xl sm:text-4xl font-extrabold text-accent-orange">
                   {stats?.availablePercentage}%
                 </div>
               </div>
@@ -66,7 +66,7 @@ const AdminProfile = () => {
             <div className="stat border-8 rounded-lg bg-neutral border-neutral-white hover:border-accent transition-all duration-300 ease-in-out flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-between items-center">
               <div className="">
                 <div className=" text-accent">Booked Rooms</div>
-                <div className="text-4xl font-extrabold text-accent-orange">
+                <div className="text-2xl sm:text-4xl font-extrabold text-accent-orange">
                   {stats?.bookedPercentage}%
                 </div>
               </div>

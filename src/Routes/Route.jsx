@@ -18,11 +18,13 @@ import MakePayment from "../Pages/Dashboard/Member/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/Member/PaymentHistory";
 import Announcements from "../Pages/Dashboard/Announcements";
 import Payment from "../Pages/Dashboard/Member/Payment";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",

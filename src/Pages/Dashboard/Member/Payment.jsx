@@ -13,11 +13,13 @@ const Payment = () => {
   const [message, setMessage] = useState("");
   const { agreement, month } = state;
   const [discountPrice, setDiscountPrice] = useState(agreement.rent);
+  const [applied , setApplied] = useState('')
 
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
+    setApplied('')
     const coupon = e.target.coupon.value;
 
     try {
@@ -33,6 +35,7 @@ const Payment = () => {
 
         const discountPrice = rent - (rent * discountPercentage) / 100;
         setDiscountPrice(discountPrice);
+        setApplied(res.data.message);
         // console.log(discountPrice);
       } else {
         setMessage(res.data.message);
@@ -58,6 +61,7 @@ const Payment = () => {
             <button type="submit" className="btn btn-sm w-20 bg-accent text-neutral-white uppercase">
               check
             </button>
+            <p className="text-thin text-xs text-success">{applied && "coupon applied"}</p>
           </form>
           <p className="text-xs text-error mb-4">{message}</p>
         </div>

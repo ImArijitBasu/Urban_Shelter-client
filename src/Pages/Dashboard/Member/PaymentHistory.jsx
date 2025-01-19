@@ -26,21 +26,49 @@ const PaymentHistory = () => {
             {/* head */}
             <thead>
               <tr className="border-y-8 border-accent">
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">Date</th>
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">Month</th>
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">Amount</th>
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">Transaction ID</th>
+                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                  Date
+                </th>
+                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                  Month
+                </th>
+                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                  Amount
+                </th>
+                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                  Transaction ID
+                </th>
               </tr>
             </thead>
             <tbody>
-              {payments.map((payment) => (
-                <tr className="border-b-4 border-x-2 border-primary-light">
-                  <th>{payment.date && format(payment.date ,' dd/MM/yyyy')}</th>
-                  <td>{payment.month && format(payment.month , "MMMM-yy")}</td>
-                  <td>${payment.rent}</td>
-                  <td>{payment.transactionId}</td>
+              {payments.length > 0 ? (
+                payments.map((payment) => (
+                  <tr
+                    key={payment.transactionId}
+                    className="border-b-4 border-x-2 border-primary-light"
+                  >
+                    <th>
+                      {payment.date &&
+                        format(new Date(payment.date), "dd/MM/yyyy")}
+                    </th>
+                    <td>
+                      {payment.month &&
+                        format(new Date(payment.month), "MMMM yyyy")}
+                    </td>
+                    <td>${payment.rent}</td>
+                    <td>{payment.transactionId}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan={4}
+                    className="text-error capitalize text-center py-5"
+                  >
+                    No payments yet
+                  </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>

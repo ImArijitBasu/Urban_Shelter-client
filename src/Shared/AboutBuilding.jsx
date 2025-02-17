@@ -12,11 +12,11 @@ const AboutBuilding = () => {
         <div className="space-y-10 md:w-2/5">
           {/* card */}
           <div className="flex flex-col text-center bg-neutral py-2">
-            <h1 className="text-primary uppercase font-semibold border-b-4 border-accent text-2xl">
+            <h1 className="text-primary dark:text-neutral-white uppercase font-semibold border-b-4 border-accent text-2xl">
               Why choose us ?
             </h1>
 
-            <p className="text-primary-light text-left px-2 mt-4 ">
+            <p className="text-primary dark:text-neutral-white-light text-left px-2 mt-4 ">
               <p className="my-1 text-lg uppercase rounded-sm border-4 border-accent hover:border-accent-orange hover:bg-accent transition-all duration-300 ease-in-out bg-accent-orange text-neutral-white font-semibold p-4">
                 🌿 Eco-Friendly Design
               </p>
@@ -30,11 +30,11 @@ const AboutBuilding = () => {
           </div>
           {/* card */}
           <div className="flex flex-col  text-center bg-neutral py-2">
-            <h1 className="text-primary uppercase font-semibold border-b-4 border-accent text-2xl">
+            <h1 className="text-primary dark:text-neutral-white uppercase font-semibold border-b-4 border-accent text-2xl">
               Top-Notch Amenities
             </h1>
 
-            <p className="text-primary-light text-left px-2 mt-4">
+            <p className="text-primary dark:text-neutral-white-light text-left px-2 mt-4">
               <p className="my-1 text-lg uppercase rounded-sm border-4 border-accent hover:border-accent-orange hover:bg-accent transition-all duration-300 ease-in-out bg-accent-orange text-neutral-white font-semibold p-4">
                 🏊 Swimming Pool
               </p>
@@ -48,11 +48,11 @@ const AboutBuilding = () => {
           </div>
           {/* card */}
           <div className="flex flex-col  text-center bg-neutral py-2">
-            <h1 className="text-primary uppercase font-semibold border-b-4 border-accent text-2xl">
+            <h1 className="text-primary dark:text-neutral-white uppercase font-semibold border-b-4 border-accent text-2xl">
               Our Vibrant Location
             </h1>
 
-            <p className="text-primary-light text-left px-2 mt-4">
+            <p className="text-primary dark:text-neutral-white-light text-left px-2 mt-4">
               <p className="my-1 text-lg uppercase rounded-sm border-4 border-accent hover:border-accent-orange hover:bg-accent transition-all duration-300 ease-in-out bg-accent-orange text-neutral-white font-semibold p-4">
                 🛍️ Located near City Mall
               </p>

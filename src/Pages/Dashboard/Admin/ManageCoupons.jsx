@@ -105,7 +105,7 @@ const ManageCoupons = () => {
                             {coupon.isAvailable ? "Available" : "Unavailable"}
                           </span>
                         </div>
-                        <span className=" text-primary hover:text-accent rounded-full">
+                        <span className=" text-primary dark:text-neutral-white hover:text-accent rounded-full">
                           <button onClick={() => handleAvailable(coupon._id)}>
                             <FaExchangeAlt />
                           </button>

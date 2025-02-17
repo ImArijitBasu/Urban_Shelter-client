@@ -25,10 +25,10 @@ const MyProfile = () => {
       <div className="flex flex-col md:flex-row justify-center items-center md:space-x-40 my-4 bg-primary-light/30 py-5 rounded-lg">
         <div className="my-3">
           <p className="capitalize text-accent bg-neutral p-2 rounded-t-lg mb-1">
-            <span className="font-bold capitalize text-primary">name:</span> {user.displayName}
+            <span className="font-bold capitalize text-primary ">name:</span> {user.displayName}
           </p>
           <p className="text-accent bg-neutral p-2 rounded-b-lg border-b-accent border-b-2">
-            <span className="font-bold capitalize text-primary">Email:</span> {user.email}
+            <span className="font-bold capitalize text-primary ">Email:</span> {user.email}
           </p>
         </div>
         <div>
@@ -43,16 +43,16 @@ const MyProfile = () => {
         <div className="w-full h-full bg-neutral rounded-lg p-2">
           {isChecked ? (
             <div className="bg-neutral-white p-4 rounded-lg shadow-md mb-4">
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Floor No:</span> {agreement.floorNo || "N/A"}
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Block No:</span> {agreement.blockName || "N/A"}
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Apartment No:</span> {agreement.apartmentNo || "N/A"}
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Rent:</span> {agreement.rent || "N/A"}
               </p>
               <p className="text-sm text-accent-orange border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
@@ -61,19 +61,19 @@ const MyProfile = () => {
             </div>
           ) : (
             <div className="bg-neutral-white p-4 rounded-lg shadow-md mb-4">
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Floor No:</span> N/A
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Block No:</span> N/A
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Apartment No:</span> N/A
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Rent:</span> N/A
               </p>
-              <p className="text-sm text-primary-light border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
+              <p className="text-sm text-primary  border-2 py-3 px-2 border-l-accent border-r-accent-orange font-semibold">
                 <span className="text-primary font-bold">Agreement Accept Date:</span> N/A
               </p>
             </div>

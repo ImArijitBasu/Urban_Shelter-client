@@ -42,7 +42,7 @@ const ManageMembers = () => {
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
-              <tr className=" border-b-4 border-accent">
+              <tr className=" border-b-4 border-accent dark:text-white">
                 <th>#</th>
                 <th>Name</th>
                 <th>Email</th>

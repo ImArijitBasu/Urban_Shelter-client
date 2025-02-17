@@ -43,7 +43,7 @@ const AgreementRequests = () => {
       <div className="mt-4 w-52 sm:w-[450px] md:w-[500px] lg:w-full overflow-x-auto">
         <div className=" max-w-full">
           <table className="table table-xs w-full overflow-x-auto">
-            <thead className="underline border-b-4 border-accent ">
+            <thead className="underline border-b-4 border-accent dark:text-white">
               <tr>
                 <th>Room No</th>
                 <th>Name</th>

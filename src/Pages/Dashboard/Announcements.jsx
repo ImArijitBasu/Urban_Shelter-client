@@ -42,14 +42,14 @@ const Announcements = () => {
                     className="bg-neutral-white px-2 py-4 rounded-lg my-2"
                   >
                     <div className="flex items-center justify-between">
-                      <p className="text-lg capitalize font-bold text-primary underline underline-offset-4">
+                      <p className="text-lg capitalize font-bold text-primary dark:text-neutral-white underline underline-offset-4">
                         {announcement.title}
                       </p>
-                      <p className="text-sm text-primary-light">
+                      <p className="text-sm text-primary dark:text-neutral-white-light">
                         {formattedDate}
                       </p>
                     </div>
-                    <p className=" text-primary-light">
+                    <p className=" text-primary dark:text-neutral-white-light">
                       {announcement.description}
                     </p>
                   </div>

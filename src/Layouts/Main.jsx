@@ -13,7 +13,7 @@ const Main = () => {
             <Navbar></Navbar>
           </div>
         }
-      <div className="flex-1 min-h-[900px] bg-neutral">
+      <div className="flex-1 min-h-[900px] bg-neutral dark:bg-primary transition-colors duration-500 ease-in-out">
         <Outlet></Outlet>
       </div>
       {

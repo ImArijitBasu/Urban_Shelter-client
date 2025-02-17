@@ -66,7 +66,7 @@ const MakeAnnouncements = () => {
                   required: "Title is required",
                 })}
                 type="text"
-                className="mt-1 block w-full p-2 border rounded-md"
+                className="mt-1 block w-full p-2 border rounded-md text-primary"
               />
               {errors.title && (
                 <p className="text-red-500 text-sm">{errors.title.message}</p>
@@ -82,7 +82,7 @@ const MakeAnnouncements = () => {
                   required: "Description is required",
                 })}
                 type="text"
-                className="mt-1 block w-full p-2 border rounded-md min-h-24 max-h-52"
+                className="mt-1 block w-full p-2 border rounded-md min-h-24 max-h-52 text-primary"
               />
               {errors.description && (
                 <p className="text-red-500 text-sm">
@@ -117,12 +117,12 @@ const MakeAnnouncements = () => {
                   className="bg-accent-orange/20 p-2 rounded-lg my-2 max-w-full"
                 >
                   <div className="flex items-center justify-between">
-                  <p className="text-lg capitalize font-bold text-primary underline underline-offset-4">
+                  <p className="text-lg capitalize font-bold text-primary dark:text-neutral-white underline underline-offset-4">
                     {announcement.title}
                   </p>
-                  <p className="text-sm text-primary-light">{formattedDate}</p>
+                  <p className="text-sm text-primary dark:text-neutral-white">{formattedDate}</p>
                   </div>
-                  <p className="text-sm text-primary-light">
+                  <p className="text-sm text-primary dark:text-neutral-white">
                     {announcement.description}
                   </p>
                 </div>

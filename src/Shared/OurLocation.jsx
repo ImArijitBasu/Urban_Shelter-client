@@ -15,7 +15,7 @@ const OurLocation = () => {
             <h1 className="text-xl font-bold border-b-2 text-accent">
               Address
             </h1>
-            <div className="text-sm text-primary-light capitalize ml-2">
+            <div className="text-sm text-primary dark:text-neutral-white-light capitalize ml-2">
               <p>Urban Shelter</p>
               <p>123 Main Street</p>
               <p>Abuja , Nigeria</p>
@@ -25,7 +25,7 @@ const OurLocation = () => {
             <h1 className="text-xl font-bold border-b-2 text-accent">
               Contact information
             </h1>
-            <div className="text-sm text-primary-light capitalize ml-2">
+            <div className="text-sm text-primary dark:text-neutral-white-light capitalize ml-2">
               <p>📞 Phone: +1 234 567 890</p>
               <p>📧 Email: info@urbanshelter.com</p>
             </div>
@@ -34,7 +34,7 @@ const OurLocation = () => {
             <h1 className="text-xl font-bold border-b-2 text-accent">
               Transportation Options
             </h1>
-            <div className="text-sm text-primary-light capitalize ml-2">
+            <div className="text-sm text-primary dark:text-neutral-white-light capitalize ml-2">
               <p>
                 🚇 By Metro: Use the Greenline Metro and exit at Downtown
                 Station.

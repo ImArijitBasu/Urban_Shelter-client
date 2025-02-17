@@ -24,7 +24,7 @@ const Coupons = () => {
                         <div className="bg-neutral/30 flex flex-col justify-center items-center border p-2 relative">
                             <p className={`text-4xl absolute -top-5 -left-3 ${coupon.isAvailable? "text-success" : "text-error"}`}>{coupon.isAvailable ? "●": "●"}</p>
                             <p className='font-josefin text-4xl font-extrabold text-accent-orange'>{coupon.discount}% <span className='font-semibold text-2xl'>off</span></p>
-                            <p className='text-accent font-semibold tex-lg'><span className='uppercase text-sm text-primary'>use:</span> {coupon.couponCode}</p>
+                            <p className='text-accent font-semibold tex-lg'><span className='uppercase text-sm text-primary dark:text-neutral-white'>use:</span> {coupon.couponCode}</p>
                             <p className='text-xs pt-2'>{coupon.description}</p>
                         </div>
                     ))

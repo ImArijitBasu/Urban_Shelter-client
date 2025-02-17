@@ -38,8 +38,8 @@ const AdminProfile = () => {
               />
             </figure>
             <div className="card-body sm:w-3/5 p-2 sm:p-8">
-              <h2 className="card-title border h-1/2 bg-accent rounded-full justify-center py-2 text-white inline-flex items-center flex-row"><span> <MdAdminPanelSettings className="text-primary text-3xl" /></span> {user.displayName}</h2>
-              <a className="inline-flex items-center justify-center border h-1/2 rounded-xl py-2" href="mailTo:admin@urban.com"> <FaEnvelope className="mr-2 text-accent-orange"/> {user.email}</a>
+              <h2 className="card-title border h-1/2 bg-accent rounded-full justify-center py-2 text-white inline-flex items-center flex-row"><span> <MdAdminPanelSettings className="text-primary dark:text-neutral-white text-3xl" /></span> {user.displayName}</h2>
+              <a className="inline-flex items-center justify-center border h-1/2 rounded-xl py-2 dark:text-accent-orange" href="mailTo:admin@urban.com"> <FaEnvelope className="mr-2 text-accent-orange "/> {user.email}</a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">

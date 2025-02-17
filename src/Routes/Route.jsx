@@ -19,6 +19,7 @@ import PaymentHistory from "../Pages/Dashboard/Member/PaymentHistory";
 import Announcements from "../Pages/Dashboard/Announcements";
 import Payment from "../Pages/Dashboard/Member/Payment";
 import ErrorPage from "../Pages/ErrorPage";
+import About from "../Pages/Home/About";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "apartments",
         element: <Apartments></Apartments>,
+      },
+      {
+        path: "about",
+        element: <About></About>,
       },
       {
         path: "login",

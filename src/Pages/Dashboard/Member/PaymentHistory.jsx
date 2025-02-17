@@ -26,16 +26,16 @@ const PaymentHistory = () => {
             {/* head */}
             <thead>
               <tr className="border-y-8 border-accent">
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                <th className="border-x-2 border-accent font-extrabold text-primary dark:text-neutral-white text-center">
                   Date
                 </th>
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                <th className="border-x-2 border-accent font-extrabold text-primary dark:text-neutral-white text-center">
                   Month
                 </th>
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                <th className="border-x-2 border-accent font-extrabold text-primary dark:text-neutral-white text-center">
                   Amount
                 </th>
-                <th className="border-x-2 border-accent font-extrabold text-primary text-center">
+                <th className="border-x-2 border-accent font-extrabold text-primary dark:text-neutral-white text-center">
                   Transaction ID
                 </th>
               </tr>

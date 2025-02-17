@@ -81,7 +81,7 @@ const CheckoutForm = ({ paymentData }) => {
     }
   };
   return (
-    <div className="bg-neutral-white text-primary p-2">
+    <div className="bg-neutral-white text-primary dark:text-neutral-white p-2">
       <form onSubmit={handleSubmit} className="">
         <CardElement
           className="border-2 border-accent"

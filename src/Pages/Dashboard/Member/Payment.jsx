@@ -53,7 +53,7 @@ const Payment = () => {
   return (
     <div>
       <Title heading={"payment"}></Title>
-      <div className="bg-neutral-white p-2 my-10 flex flex-col sm:flex-row justify-between">
+      <div className="bg-neutral-white dark:bg-primary-light p-2 my-10 flex flex-col sm:flex-row justify-between">
         <div className="">
           <form className="form-control space-y-2" action="" onSubmit={handleFormSubmit}>
             <label htmlFor="" className="font-bold uppercase">Apply Coupon</label>

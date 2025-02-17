@@ -98,7 +98,7 @@ const Apartments = () => {
         <form onSubmit={handleSearchSubmit} className="my-4">
           <div className="flex items-center space-x-4">
             <div className="flex-1">
-              <label htmlFor="minRent" className="block text-sm font-medium text-gray-700">Min Rent:</label>
+              <label htmlFor="minRent" className="block text-sm font-medium text-gray-700 dark:text-neutral-white">Min Rent:</label>
               <input
                 type="number"
                 id="minRent"
@@ -110,7 +110,7 @@ const Apartments = () => {
               />
             </div>
             <div className="flex-1">
-              <label htmlFor="maxRent" className="block text-sm font-medium text-gray-700">Max Rent:</label>
+              <label htmlFor="maxRent" className="block text-sm font-medium text-gray-700 dark:text-neutral-white">Max Rent:</label>
               <input
                 type="number"
                 id="maxRent"

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
-import Theme from "./Theme"
+import Theme from "./Theme";
 const Navbar = () => {
   const { user, logout } = useAuth();
 
@@ -29,6 +29,18 @@ const Navbar = () => {
       <li>
         <NavLink to={"/about"}>About Us</NavLink>
       </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink to={"/announcement"}>Announcements</NavLink>
+          </li>{" "}
+          <li>
+            <NavLink to={"/support"}>Support</NavLink>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
   const userLinks = (
@@ -58,7 +70,7 @@ const Navbar = () => {
               <button onClick={handleLogOut}>Logout</button>
             </li>
             <li>
-              <Theme/>
+              <Theme />
             </li>
           </ul>
         </div>

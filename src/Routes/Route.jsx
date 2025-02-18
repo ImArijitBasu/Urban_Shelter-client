@@ -20,6 +20,7 @@ import Announcements from "../Pages/Dashboard/Announcements";
 import Payment from "../Pages/Dashboard/Member/Payment";
 import ErrorPage from "../Pages/ErrorPage";
 import About from "../Pages/Home/About";
+import Support from "../Pages/Home/Support";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,18 @@ export const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
+      },
+      {
+        path: 'announcement',
+        element: <PrivateRoute>
+          <Announcements></Announcements>
+        </PrivateRoute>
+      },
+      {
+        path: 'support',
+        element: <PrivateRoute>
+          <Support></Support>
+        </PrivateRoute>
       },
       {
         path: "login",

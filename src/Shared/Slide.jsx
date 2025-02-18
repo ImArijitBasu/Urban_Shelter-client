@@ -3,10 +3,10 @@ import React from "react";
 const Slide = ({ rent, apartment, image }) => {
   return (
     <div className="flex justify-evenly items-center space-x-10 bg-gradient-to-b from-primary  via-accent/50 to-transparent">
-      <div className="relative container">
+      <div className="relative w-full">
         <img
           src={image}
-          className="h-[600px] container object-cover rounded-b-xl filter blur-sm backdrop-brightness-100 brightness-100 contrast-100 saturate-200"
+          className="h-[600px] w-full object-cover rounded-b-xl filter blur-sm backdrop-brightness-100 brightness-100 dark:brightness-75 contrast-100 saturate-200 transition-all duration-500"
           alt=""
         />
         <div className="absolute  inset-0 flex flex-col items-center justify-center bg-accent-orange/15 text-white rounded-b-xl">

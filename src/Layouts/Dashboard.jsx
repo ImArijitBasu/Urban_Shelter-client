@@ -45,6 +45,9 @@ const Dashboard = () => {
               <li className="uppercase text-xs font-bold border rounded-lg text-white">
                 <NavLink to="/dashboard/manageCoupons">Manage Coupons</NavLink>
               </li>
+              <li className="uppercase text-xs font-bold border rounded-lg text-white">
+                <NavLink to="/dashboard/overview">Overview</NavLink>
+              </li>
             </>
           )}
           {role === "member" && (

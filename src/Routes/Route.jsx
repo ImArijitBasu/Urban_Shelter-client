@@ -21,6 +21,7 @@ import Payment from "../Pages/Dashboard/Member/Payment";
 import ErrorPage from "../Pages/ErrorPage";
 import About from "../Pages/Home/About";
 import Support from "../Pages/Home/Support";
+import OverviewPage from "../Pages/Dashboard/Admin/OverviewPage";
 
 export const router = createBrowserRouter([
   {
@@ -108,6 +109,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <ManageCoupons />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "overview",
+        element: (
+          <AdminRoute>
+            <OverviewPage />
           </AdminRoute>
         ),
       },

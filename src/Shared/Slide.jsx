@@ -1,11 +1,13 @@
 import React from "react";
+import LazyImage from "../Components/LazyImage";
 
 const Slide = ({ rent, apartment, image }) => {
   return (
     <div className="flex justify-evenly items-center space-x-10 bg-gradient-to-b from-primary  via-accent/50 to-transparent">
       <div className="relative w-full">
-        <img
+        <LazyImage
           src={image}
+          loading="lazy"
           className="h-[800px] w-full object-cover rounded-b-xl filter blur-sm backdrop-brightness-100 brightness-100 dark:brightness-75 contrast-100 saturate-200 transition-all duration-500"
           alt=""
         />

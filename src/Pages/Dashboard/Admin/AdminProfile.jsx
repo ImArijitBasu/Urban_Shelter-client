@@ -13,6 +13,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
+import LazyImage from "../../../Components/LazyImage";
 
 const AdminProfile = () => {
   const { user } = useAuth();
@@ -31,7 +32,7 @@ const AdminProfile = () => {
         <div className="">
           <div className="card my-10 card-side flex-col sm:flex-row bg-base-100 shadow-xl">
             <figure className="sm:w-2/5">
-              <img
+              <LazyImage
                 src={user.photoURL}
                 alt="Movie"
                 className="sm:h-60 w-full object-cover p-4 sm:p-0 rounded-full sm:rounded-none"

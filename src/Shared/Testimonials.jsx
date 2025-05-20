@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaQuoteLeft, FaUserCircle } from 'react-icons/fa';
 import Title from '../Components/Title';
+import LazyImage from '../Components/LazyImage';
 
 const Testimonials = () => {
   const testimonials = [
@@ -35,7 +36,7 @@ const Testimonials = () => {
             <p className="text-primary-light italic mb-4">"{testimonial.text}"</p>
             
             <div className="flex justify-center items-center">
-              <img
+              <LazyImage
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="w-12 h-12 rounded-full border-2 object-cover border-primary-light mr-3"

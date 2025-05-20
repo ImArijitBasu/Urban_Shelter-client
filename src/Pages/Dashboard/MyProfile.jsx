@@ -4,6 +4,7 @@ import Title from "../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { format } from "date-fns";
+import LazyImage from "../../Components/LazyImage";
 
 const MyProfile = () => {
   const { user } = useAuth();
@@ -32,7 +33,7 @@ const MyProfile = () => {
           </p>
         </div>
         <div>
-          <img
+          <LazyImage
             src={user.photoURL}
             className={`w-40 rounded-xl object-cover border-4 ${isChecked ? "border-success" : "border-warning"}`}
             alt="Profile"

@@ -6,12 +6,13 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAuth from "../../Hooks/useAuth";
 import Title from "../../Components/Title";
 import Pagination from "../../Shared/Pagination";
+import LazyImage from "../../Components/LazyImage";
 
 const Apartments = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
-  
+
   const { data: apartments = [] } = useQuery({
     queryKey: ["apartments"],
     queryFn: async () => {
@@ -96,10 +97,18 @@ const Apartments = () => {
       <Title heading="Apartments" />
 
       {/* Search & Sort */}
-      <form onSubmit={handleSearchSubmit} className="my-4 flex flex-wrap items-center gap-4">
+      <form
+        onSubmit={handleSearchSubmit}
+        className="my-4 flex flex-wrap items-center gap-4"
+      >
         {/* Rent Filter */}
         <div className="flex-1">
-          <label htmlFor="minRent" className="block text-sm font-medium text-gray-700 dark:text-neutral-white">Min Rent:</label>
+          <label
+            htmlFor="minRent"
+            className="block text-sm font-medium text-gray-700 dark:text-neutral-white"
+          >
+            Min Rent:
+          </label>
           <input
             type="number"
             id="minRent"
@@ -111,7 +120,12 @@ const Apartments = () => {
           />
         </div>
         <div className="flex-1">
-          <label htmlFor="maxRent" className="block text-sm font-medium text-gray-700 dark:text-neutral-white">Max Rent:</label>
+          <label
+            htmlFor="maxRent"
+            className="block text-sm font-medium text-gray-700 dark:text-neutral-white"
+          >
+            Max Rent:
+          </label>
           <input
             type="number"
             id="maxRent"
@@ -125,7 +139,9 @@ const Apartments = () => {
 
         {/* Sorting Dropdown */}
         <div className="flex-1">
-          <label className="block text-sm font-medium text-gray-700 dark:text-neutral-white">Sort by Rent:</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-neutral-white">
+            Sort by Rent:
+          </label>
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
@@ -140,9 +156,17 @@ const Apartments = () => {
       {/* Apartments Listing */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
         {currentApartments.map((apartment) => (
-          <div key={apartment._id} className="card rounded-none glass bg-neutral-white w-full shadow-xl">
+          <div
+            key={apartment._id}
+            className="card rounded-none glass bg-neutral-white w-full shadow-xl"
+          >
             <figure>
-              <img src={apartment.image} alt="apartment" className="w-full h-60 object-cover" />
+              <LazyImage 
+                
+                src={apartment.image}
+                alt="apartment"
+                className="w-full h-60 object-cover"
+              />
             </figure>
             <div className="card-body">
               <div className="flex items-center">
@@ -159,7 +183,10 @@ const Apartments = () => {
               </div>
               <div className="card-actions justify-end items-center">
                 <p>
-                  <span className="text-accent-orange text-2xl">${apartment.rent}</span> /month
+                  <span className="text-accent-orange text-2xl">
+                    ${apartment.rent}
+                  </span>{" "}
+                  /month
                 </p>
                 <button
                   onClick={() => handleAgreement(apartment)}
@@ -175,7 +202,11 @@ const Apartments = () => {
       </div>
 
       {/* Pagination */}
-      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import 'swiper/css/navigation';  // Import navigation styles
 
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import Title from "../Components/Title";
+import LazyImage from "../Components/LazyImage";
 
 const ApartmentSlider = () => {
   const [rooms, setRooms] = useState([]);
@@ -51,7 +52,7 @@ const ApartmentSlider = () => {
       >
         {rooms.map((room, index) => (
           <SwiperSlide key={index}>
-            <img
+            <LazyImage
               src={room?.image}
               alt={`Room ${index + 1}`}
               className="w-full h-80 object-cover rounded-md"

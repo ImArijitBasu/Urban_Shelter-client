@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import Theme from "./Theme";
+import LazyImage from "./LazyImage";
 const Navbar = () => {
   const { user, logout } = useAuth();
 
@@ -49,7 +50,7 @@ const Navbar = () => {
         <div className="dropdown dropdown-bottom dropdown-end">
           <div tabIndex={0} role="button" className="rounded-3xl m-1">
             <div className="h-12 w-12 border-2 border-accent rounded-full flex justify-center items-center">
-              <img
+              <LazyImage
                 src={user.photoURL}
                 className="rounded-full object-cover object-center w-full h-full"
                 alt="User Avatar"

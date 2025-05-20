@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyImage from "../Components/LazyImage";
 
 const AboutSlide = ({ image }) => {
   return (
     <div className="flex justify-center items-center bg-gradient-to-b from-primary via-accent/50 to-transparent">
       <div className="relative w-full">
-        <img
+        <LazyImage
           src={image}
           className="h-[400px] w-full object-cover rounded-b-xl filter blur-sm brightness-90 dark:brightness-75 contrast-100 saturate-150 transition-all duration-500"
           alt="About Urban Shelter"

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import Title from "../Components/Title";
 import { Link } from "react-router-dom";
+import LazyImage from "../Components/LazyImage";
 
 const AvailableApartments = () => {
   const axiosPublic = useAxiosPublic();
@@ -30,7 +31,7 @@ const AvailableApartments = () => {
             className="card rounded-none glass bg-neutral-white w-full shadow-xl"
           >
             <figure>
-              <img
+              <LazyImage
                 src={apartment.image}
                 alt="apartment"
                 className="w-full h-60 object-cover"
